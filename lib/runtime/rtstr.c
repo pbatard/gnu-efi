@@ -17,9 +17,6 @@ Revision History
 
 #include "lib.h"
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrCmp)
-#endif
 INTN
 RUNTIMEFUNCTION
 RtStrCmp (
@@ -40,9 +37,6 @@ RtStrCmp (
     return *s1 - *s2;
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrCpy)
-#endif
 VOID
 RUNTIMEFUNCTION
 RtStrCpy (
@@ -57,9 +51,6 @@ RtStrCpy (
     *Dest = 0;
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrnCpy)
-#endif
 VOID
 RUNTIMEFUNCTION
 RtStrnCpy (
@@ -76,9 +67,6 @@ RtStrnCpy (
     RtCopyMemC(Dest, Src, Size * sizeof(CHAR16));
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStpCpy)
-#endif
 CHAR16 *
 RUNTIMEFUNCTION
 RtStpCpy (
@@ -94,9 +82,6 @@ RtStpCpy (
     return Dest;
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStpnCpy)
-#endif
 CHAR16 *
 RUNTIMEFUNCTION
 RtStpnCpy (
@@ -114,9 +99,6 @@ RtStpnCpy (
     return Dest + Size;
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrCat)
-#endif
 VOID
 RUNTIMEFUNCTION
 RtStrCat (
@@ -127,9 +109,6 @@ RtStrCat (
     RtStrCpy(Dest+RtStrLen(Dest), Src);
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrnCat)
-#endif
 VOID
 RUNTIMEFUNCTION
 RtStrnCat (
@@ -146,9 +125,6 @@ RtStrnCat (
     Dest[DestSize + Size] = '\0';
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrLen)
-#endif
 UINTN
 RUNTIMEFUNCTION
 RtStrLen (
@@ -162,9 +138,6 @@ RtStrLen (
     return len;
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrnLen)
-#endif
 UINTN
 RUNTIMEFUNCTION
 RtStrnLen (
@@ -179,9 +152,6 @@ RtStrnLen (
     return i;
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtStrSize)
-#endif
 UINTN
 RUNTIMEFUNCTION
 RtStrSize (
@@ -195,9 +165,6 @@ RtStrSize (
     return (len + 1) * sizeof(CHAR16);
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtBCDtoDecimal)
-#endif
 UINT8
 RUNTIMEFUNCTION
 RtBCDtoDecimal(
@@ -212,10 +179,6 @@ RtBCDtoDecimal(
     return ((UINT8)(Low + (High * 10)));
 }
 
-
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtDecimaltoBCD)
-#endif
 UINT8
 RUNTIMEFUNCTION
 RtDecimaltoBCD (
@@ -229,5 +192,3 @@ RtDecimaltoBCD (
 
     return ((UINT8)(Low + (High << 4)));
 }
-
-

@@ -22,30 +22,6 @@ Revision History
 
 /* VA types/functions can be used if used internally so we can use default va_list always here */
 
-
-//
-// Declare runtime functions
-//
-
-#ifdef RUNTIME_CODE
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(DbgPrint)
-
-// For debugging..
-
-/*
-#pragma RUNTIME_CODE(ValueToHex)
-#pragma RUNTIME_CODE(ValueToString)
-#pragma RUNTIME_CODE(TimeToString)
-*/
-
-#endif /* !defined(__GNUC__) */
-#endif
-
-//
-//
-//
-
 INTN
 DbgPrint (
     IN INTN         mask,

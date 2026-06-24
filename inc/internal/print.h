@@ -2,24 +2,8 @@
 #define __GNU_EFI_INTERNAL_PRINT
 
 //
-// Internal fucntions
+// Internal functions
 //
-
-//
-// Declare runtime functions
-//
-
-#ifdef RUNTIME_CODE
-#ifndef __GNUC__
-
-// For debugging..
-
-/*
-#pragma RUNTIME_CODE(PGETC)
-*/
-
-#endif /* !defined(__GNUC__) */
-#endif
 
 typedef struct {
     BOOLEAN             Ascii;
@@ -97,9 +81,3 @@ IsLocalPrint(void *func)
 }
 
 #endif
-
-
-
-//
-//
-//

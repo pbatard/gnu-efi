@@ -27,26 +27,6 @@ typedef va_list VA_LIST;
 #define CALL_CONV
 #endif
 
-//
-// Declare runtime functions
-//
-
-#ifdef RUNTIME_CODE
-#ifndef __GNUC__
-
-// For debugging..
-
-/*
-#pragma RUNTIME_CODE(FUNCTION_NAME(_Print))
-#pragma RUNTIME_CODE(FUNCTION_NAME(PFLUSH))
-#pragma RUNTIME_CODE(FUNCTION_NAME(PSETATTR))
-#pragma RUNTIME_CODE(FUNCTION_NAME(PPUTC))
-#pragma RUNTIME_CODE(FUNCTION_NAME(PITEM))
-*/
-
-#endif /* !defined(__GNUC__) */
-#endif
-
 typedef struct FUNCTION_NAME(_pstate) {
     // Input
     POINTER     fmt;

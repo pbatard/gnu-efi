@@ -18,26 +18,6 @@ Revision History
 #include "lib.h"
 
 
-//
-// Declare runtime functions
-//
-
-#ifdef RUNTIME_CODE
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(LShiftU64)
-#pragma RUNTIME_CODE(RShiftU64)
-#pragma RUNTIME_CODE(MultU64x32)
-#pragma RUNTIME_CODE(DivU64x32)
-#endif
-#endif
-
-//
-//
-//
-
-
-
-
 UINT64
 LShiftU64 (
     IN UINT64   Operand,

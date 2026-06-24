@@ -20,10 +20,6 @@ Revision History
 #include "lib.h"
 
 
-
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtAcquireLock)
-#endif
 VOID
 RtAcquireLock (
     IN FLOCK    *Lock
@@ -60,9 +56,6 @@ Returns:
 }
 
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtAcquireLock)
-#endif
 VOID
 RtReleaseLock (
     IN FLOCK    *Lock

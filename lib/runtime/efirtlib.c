@@ -20,9 +20,6 @@ Revision History
 #include "efilib.h"
 #include "efirtlib.h"
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtZeroMem)
-#endif
 VOID
 RUNTIMEFUNCTION
 RtZeroMem (
@@ -38,9 +35,6 @@ RtZeroMem (
     }
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtSetMem)
-#endif
 VOID
 EFIAPI
 RUNTIMEFUNCTION
@@ -58,9 +52,6 @@ RtSetMem (
     }
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtCopyMem)
-#endif
 VOID
 EFIAPI
 RUNTIMEFUNCTION
@@ -90,9 +81,6 @@ RtCopyMem (
     }
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtCopyMemC)
-#endif
 VOID
 EFIAPI
 RUNTIMEFUNCTION
@@ -109,9 +97,6 @@ RtCopyMemC (
     RtCopyMem(Dest, (VOID*)Src, len);
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtCompareMem)
-#endif
 INTN
 RUNTIMEFUNCTION
 RtCompareMem (
@@ -140,9 +125,6 @@ RtCompareMem (
 
 typedef UINT32 QUAD_UINT32[4]; /* EFI_GUID is 128 bits so 32 x 4 */
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtCompareGuid)
-#endif
 BOOLEAN
 EFIAPI
 RUNTIMEFUNCTION
@@ -188,9 +170,6 @@ Returns:
     }
 }
 
-#ifndef __GNUC__
-#pragma RUNTIME_CODE(RtIsZeroGuid)
-#endif
 BOOLEAN
 EFIAPI
 RUNTIMEFUNCTION
@@ -199,5 +178,4 @@ IN CONST EFI_GUID     *Guid1
 )
 {
 	return RtCompareGuid(Guid1, &gZeroGuid);
-
 }

@@ -20,17 +20,6 @@ Revision History
 
 
 //
-// These globals are runtime globals
-//
-// N.B. The Microsoft C compiler will only put the data in the
-// right data section if it is explicitly initialized..
-//
-
-#ifndef __GNUC__
-#pragma BEGIN_RUNTIME_DATA()
-#endif
-
-//
 // RT - pointer to the runtime table
 //
 

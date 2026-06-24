@@ -105,7 +105,6 @@ typedef uint32_t   UINTN;
 // BOOTSERVICE - prototype for implementation of a boot service interface
 // RUNTIMESERVICE - prototype for implementation of a runtime service interface
 // RUNTIMEFUNCTION - prototype for implementation of a runtime function that is not a service
-// RUNTIME_CODE - pragma macro for declaring runtime code
 //
 
 #ifndef EFIAPI          // Forces EFI calling conventions reguardless of compiler options
@@ -115,14 +114,7 @@ typedef uint32_t   UINTN;
 #define BOOTSERVICE
 #define RUNTIMESERVICE
 #define RUNTIMEFUNCTION
-
-
-#define RUNTIME_CODE(a)         alloc_text("rtcode", a)
-#define BEGIN_RUNTIME_DATA()    data_seg("rtdata")
-#define END_RUNTIME_DATA()      data_seg("")
-
 #define VOLATILE                volatile
-
 #define MEMORY_FENCE            __sync_synchronize
 
 //

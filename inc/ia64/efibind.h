@@ -152,8 +152,7 @@ typedef uint64_t   UINTN;
 // EFIAPI - prototype calling convention for EFI function pointers
 // BOOTSERVICE - prototype for implementation of a boot service interface
 // RUNTIMESERVICE - prototype for implementation of a runtime service interface
-// RUNTIMEFUNCTION - prototype for implementation of a runtime function that is not a service
-// RUNTIME_CODE - pragma macro for declaring runtime code    
+// RUNTIMEFUNCTION - prototype for implementation of a runtime function that is not a service 
 //
 
 #ifndef EFIAPI                  // Forces EFI calling conventions reguardless of compiler options 
@@ -167,11 +166,6 @@ typedef uint64_t   UINTN;
 #define BOOTSERVICE
 #define RUNTIMESERVICE
 #define RUNTIMEFUNCTION
-
-#define RUNTIME_CODE(a)         alloc_text("rtcode", a)
-#define BEGIN_RUNTIME_DATA()    data_seg("rtdata")
-#define END_RUNTIME_DATA()      data_seg("")
-
 #define VOLATILE    volatile
 
 //
@@ -180,8 +174,8 @@ typedef uint64_t   UINTN;
 #ifdef __GNUC__
 #define MEMORY_FENCE()    __asm__ __volatile__ ("mf.a" ::: "memory")
 #else
-void __mf (void);                       
-#pragma intrinsic (__mf)  
+void __mf (void);
+#pragma intrinsic (__mf)
 #define MEMORY_FENCE()    __mf()
 #endif
 
